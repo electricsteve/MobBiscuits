@@ -1,0 +1,37 @@
+{
+  "schemaVersion": 1,
+  "id": "mobbiscuits",
+  "version": "${version}",
+  "name": "Mob Biscuits",
+  "description": "",
+  "authors": [
+    ""
+  ],
+  "contact": {
+    "homepage": ""
+  },
+  "license": "MIT",
+  "icon": "assets/mobbiscuits/icon.png",
+  "environment": "*",
+  "entrypoints": {
+    "main": [
+      "dev.electricsteve.mobbiscuits.fabric.MobBiscuitsFabric"
+    ],
+    "client": [
+      "dev.electricsteve.mobbiscuits.fabric.client.MobBiscuitsFabricClient"
+    ]
+  },
+  "mixins": [
+    "mobbiscuits.mixins.json"
+  ],
+  "depends": {
+    "fabricloader": ">=0.16.14",
+    "minecraft": "~1.21.1",
+    "java": ">=21",
+    "architectury": ">=13.0.8",
+    "fabric-api": "*"
+  },
+  "suggests": {
+    "another-mod": "*"
+  }
+}
