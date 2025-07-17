@@ -4,6 +4,7 @@ import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
+import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.Level;
 
@@ -13,8 +14,23 @@ public final class MobBiscuits {
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, Registries.ITEM);
 
     private static RegistrySupplier<Item> registerBiscuit(String name, FoodProperties foodProperties, BiscuitUseFunction biscuitUseFunction) {
-        return ITEMS.register(name, () -> new BiscuitItem(new Item.Properties().food(foodProperties), biscuitUseFunction));
+        return ITEMS.register(name, () -> new BiscuitItem(new Item.Properties().food(foodProperties).arch$tab(CreativeModeTabs.FOOD_AND_DRINKS), biscuitUseFunction));
     }
+
+    public static final RegistrySupplier<Item> COW_BISCUIT = registerBiscuit("cow_biscuit",
+            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            ((itemStack, level, livingEntity) -> {
+                if (!level.isClientSide) {
+                    livingEntity.removeAllEffects();
+                }
+                return itemStack;
+            }));
+
+    public static final RegistrySupplier<Item> CREAKING_BISCUIT = registerBiscuit("creaking_biscuit",
+            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            ((itemStack, level, livingEntity) -> {
+                return itemStack;
+            }));
 
     public static final RegistrySupplier<Item> CREEPER_BISCUIT = registerBiscuit("creeper_biscuit",
             new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
@@ -25,10 +41,33 @@ public final class MobBiscuits {
                 return itemStack;
             }));
 
-    public static final RegistrySupplier<Item> COW_BISCUIT = registerBiscuit("cow_biscuit",
+    public static final RegistrySupplier<Item> PIG_BISCUIT = registerBiscuit("pig_biscuit",
             new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
             ((itemStack, level, livingEntity) -> {
-                // WIP
+                return itemStack;
+            }));
+
+    public static final RegistrySupplier<Item> SHEEP_BISCUIT = registerBiscuit("sheep_biscuit",
+            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            ((itemStack, level, livingEntity) -> {
+                return itemStack;
+            }));
+
+    public static final RegistrySupplier<Item> SKELETON_BISCUIT = registerBiscuit("skeleton_biscuit",
+            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            ((itemStack, level, livingEntity) -> {
+                return itemStack;
+            }));
+
+    public static final RegistrySupplier<Item> SLIME_BISCUIT = registerBiscuit("slime_biscuit",
+            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            ((itemStack, level, livingEntity) -> {
+                return itemStack;
+            }));
+
+    public static final RegistrySupplier<Item> ZOMBIE_BISCUIT = registerBiscuit("zombie_biscuit",
+            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            ((itemStack, level, livingEntity) -> {
                 return itemStack;
             }));
 
