@@ -11,6 +11,9 @@ import net.minecraft.world.level.Level;
 public final class MobBiscuits {
     public static final String MOD_ID = "mobbiscuits";
 
+    private static final int NUTRITION = 4;
+    private static final float SATURATION_MODIFIER = 0.2F;
+
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, Registries.ITEM);
 
     private static RegistrySupplier<Item> registerBiscuit(String name, FoodProperties foodProperties, BiscuitUseFunction biscuitUseFunction) {
@@ -18,7 +21,7 @@ public final class MobBiscuits {
     }
 
     public static final RegistrySupplier<Item> COW_BISCUIT = registerBiscuit("cow_biscuit",
-            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
                 if (!level.isClientSide) {
                     livingEntity.removeAllEffects();
@@ -27,13 +30,13 @@ public final class MobBiscuits {
             }));
 
     public static final RegistrySupplier<Item> CREAKING_BISCUIT = registerBiscuit("creaking_biscuit",
-            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
                 return itemStack;
             }));
 
     public static final RegistrySupplier<Item> CREEPER_BISCUIT = registerBiscuit("creeper_biscuit",
-            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
                 if (!level.isClientSide) {
                     level.explode(null, livingEntity.getX(), livingEntity.getY(), livingEntity.getZ(), 1.0F, Level.ExplosionInteraction.MOB);
@@ -42,31 +45,31 @@ public final class MobBiscuits {
             }));
 
     public static final RegistrySupplier<Item> PIG_BISCUIT = registerBiscuit("pig_biscuit",
-            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
                 return itemStack;
             }));
 
     public static final RegistrySupplier<Item> SHEEP_BISCUIT = registerBiscuit("sheep_biscuit",
-            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
                 return itemStack;
             }));
 
     public static final RegistrySupplier<Item> SKELETON_BISCUIT = registerBiscuit("skeleton_biscuit",
-            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
                 return itemStack;
             }));
 
     public static final RegistrySupplier<Item> SLIME_BISCUIT = registerBiscuit("slime_biscuit",
-            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
                 return itemStack;
             }));
 
     public static final RegistrySupplier<Item> ZOMBIE_BISCUIT = registerBiscuit("zombie_biscuit",
-            new FoodProperties.Builder().nutrition(4).saturationModifier(0.2F).build(),
+            new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
                 return itemStack;
             }));

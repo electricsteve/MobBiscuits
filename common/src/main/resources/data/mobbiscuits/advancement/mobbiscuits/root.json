@@ -1,0 +1,32 @@
+{
+  "criteria": {
+    "consumed_item": {
+      "conditions": {
+        "item": {
+          "items": "#mobbiscuits:biscuits"
+        }
+      },
+      "trigger": "minecraft:consume_item"
+    }
+  },
+  "display": {
+    "announce_to_chat": false,
+    "background": "minecraft:textures/gui/advancements/backgrounds/husbandry.png",
+    "description": {
+      "translate": "advancements.husbandry.root.description"
+    },
+    "icon": {
+      "count": 1,
+      "id": "mobbiscuits:creeper_biscuit"
+    },
+    "show_toast": false,
+    "title": {
+      "translate": "advancements.mobbiscuits.root.title"
+    }
+  },
+  "requirements": [
+    [
+      "consumed_item"
+    ]
+  ]
+}
