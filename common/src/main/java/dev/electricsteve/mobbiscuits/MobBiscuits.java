@@ -3,9 +3,14 @@ package dev.electricsteve.mobbiscuits;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import net.minecraft.core.registries.Registries;
+import net.minecraft.server.level.ServerPlayer;
+import net.minecraft.world.effect.MobEffectInstance;
+import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
+import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
 
 public final class MobBiscuits {
@@ -20,6 +25,8 @@ public final class MobBiscuits {
         return ITEMS.register(name, () -> new BiscuitItem(new Item.Properties().food(foodProperties).arch$tab(CreativeModeTabs.FOOD_AND_DRINKS), biscuitUseFunction));
     }
 
+
+
     public static final RegistrySupplier<Item> COW_BISCUIT = registerBiscuit("cow_biscuit",
             new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
@@ -32,6 +39,9 @@ public final class MobBiscuits {
     public static final RegistrySupplier<Item> CREAKING_BISCUIT = registerBiscuit("creaking_biscuit",
             new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
+                if (!level.isClientSide) {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.INVISIBILITY, 20 * 30));
+                }
                 return itemStack;
             }));
 
@@ -45,32 +55,49 @@ public final class MobBiscuits {
             }));
 
     public static final RegistrySupplier<Item> PIG_BISCUIT = registerBiscuit("pig_biscuit",
-            new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
+            new FoodProperties.Builder().nutrition(NUTRITION + 1).saturationModifier(SATURATION_MODIFIER + 0.1F).build(),
             ((itemStack, level, livingEntity) -> {
+                if (!level.isClientSide) {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 30, 1));
+                }
                 return itemStack;
             }));
 
     public static final RegistrySupplier<Item> SHEEP_BISCUIT = registerBiscuit("sheep_biscuit",
             new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
+                if (!level.isClientSide) {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.REGENERATION, 20 * 10, 1));
+                }
                 return itemStack;
             }));
 
     public static final RegistrySupplier<Item> SKELETON_BISCUIT = registerBiscuit("skeleton_biscuit",
             new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
+                if (!level.isClientSide && livingEntity instanceof ServerPlayer serverPlayer) {
+                    serverPlayer.getInventory().add(new ItemStack(Items.SPECTRAL_ARROW, 8));
+                }
                 return itemStack;
             }));
 
     public static final RegistrySupplier<Item> SLIME_BISCUIT = registerBiscuit("slime_biscuit",
             new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
+                if (!level.isClientSide) {
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 20 * 10, 3));
+                }
                 return itemStack;
             }));
 
     public static final RegistrySupplier<Item> ZOMBIE_BISCUIT = registerBiscuit("zombie_biscuit",
             new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
+                if (!level.isClientSide) {
+                    if (livingEntity.getRandom().nextFloat() < 0.9F) {
+                        livingEntity.addEffect(new MobEffectInstance(MobEffects.HUNGER, 20 * 10));
+                    }
+                }
                 return itemStack;
             }));
 
