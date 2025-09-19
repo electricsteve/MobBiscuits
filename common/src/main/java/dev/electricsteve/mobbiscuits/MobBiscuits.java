@@ -6,12 +6,18 @@ import net.minecraft.core.registries.Registries;
 import net.minecraft.server.level.ServerPlayer;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
+import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.food.FoodProperties;
 import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.level.Level;
+
+import java.util.Map;
+
+import static java.util.Map.entry;
 
 public final class MobBiscuits {
     public static final String MOD_ID = "mobbiscuits";
@@ -24,8 +30,6 @@ public final class MobBiscuits {
     private static RegistrySupplier<Item> registerBiscuit(String name, FoodProperties foodProperties, BiscuitUseFunction biscuitUseFunction) {
         return ITEMS.register(name, () -> new BiscuitItem(new Item.Properties().food(foodProperties).arch$tab(CreativeModeTabs.FOOD_AND_DRINKS), biscuitUseFunction));
     }
-
-
 
     public static final RegistrySupplier<Item> COW_BISCUIT = registerBiscuit("cow_biscuit",
             new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
@@ -58,7 +62,7 @@ public final class MobBiscuits {
             new FoodProperties.Builder().nutrition(NUTRITION + 1).saturationModifier(SATURATION_MODIFIER + 0.1F).build(),
             ((itemStack, level, livingEntity) -> {
                 if (!level.isClientSide) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.MOVEMENT_SPEED, 20 * 30, 1));
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.SPEED, 20 * 30, 1));
                 }
                 return itemStack;
             }));
@@ -85,7 +89,7 @@ public final class MobBiscuits {
             new FoodProperties.Builder().nutrition(NUTRITION).saturationModifier(SATURATION_MODIFIER).build(),
             ((itemStack, level, livingEntity) -> {
                 if (!level.isClientSide) {
-                    livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP, 20 * 10, 3));
+                    livingEntity.addEffect(new MobEffectInstance(MobEffects.JUMP_BOOST, 20 * 10, 3));
                 }
                 return itemStack;
             }));
@@ -100,6 +104,20 @@ public final class MobBiscuits {
                 }
                 return itemStack;
             }));
+
+    public static final Map<EntityType<? extends LivingEntity>, RegistrySupplier<Item>> BISCUIT_ITEMS = Map.ofEntries(
+            entry(EntityType.COW, COW_BISCUIT),
+            entry(EntityType.CREAKING, CREAKING_BISCUIT),
+            entry(EntityType.CREEPER, CREEPER_BISCUIT),
+            entry(EntityType.PIG, PIG_BISCUIT),
+            entry(EntityType.SHEEP, SHEEP_BISCUIT),
+            entry(EntityType.SKELETON, SKELETON_BISCUIT),
+            entry(EntityType.SLIME, SLIME_BISCUIT),
+            entry(EntityType.ZOMBIE, ZOMBIE_BISCUIT)
+    );
+
+    public static final RegistrySupplier<Item> BISCUIT_PRESS = ITEMS.register("biscuit_press",
+            () -> new BiscuitPressItem(new Item.Properties().arch$tab(CreativeModeTabs.TOOLS_AND_UTILITIES)));
 
     public static void init() {
         ITEMS.register();
