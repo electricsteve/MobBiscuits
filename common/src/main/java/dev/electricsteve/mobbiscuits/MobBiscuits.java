@@ -31,7 +31,7 @@ public final class MobBiscuits {
     private static final int NUTRITION = 4;
     private static final float SATURATION_MODIFIER = 0.2F;
 
-    private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, RegistryKeys.ITEM);
+    public static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, RegistryKeys.ITEM);
 
     private static RegistrySupplier<Item> registerBiscuit(String name, FoodComponent foodComponent, BiscuitUseFunction biscuitUseFunction) {
         return ITEMS.register(name, () -> new BiscuitItem(new Item.Settings().food(foodComponent).arch$tab(ItemGroups.FOOD_AND_DRINK).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, name))), biscuitUseFunction));

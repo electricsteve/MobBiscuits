@@ -10,3 +10,12 @@ dependencies {
 
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
 }
+
+sourceSets {
+    main {
+        resources {
+            srcDir project(":common").file("src/generated/resources")
+            exclude(".cache/**")
+        }
+    }
+}

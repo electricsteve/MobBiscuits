@@ -19,6 +19,9 @@
     ],
     "client": [
       "dev.electricsteve.mobbiscuits.fabric.client.MobBiscuitsFabricClient"
+    ],
+    "fabric-datagen": [
+      "dev.electricsteve.mobbiscuits.fabric.client.MobBiscuitsDataGen"
     ]
   },
   "mixins": [
