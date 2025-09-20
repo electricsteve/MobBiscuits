@@ -2,6 +2,7 @@ package dev.electricsteve.mobbiscuits;
 
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
+import dev.electricsteve.mobbiscuits.component.ModComponents;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -11,8 +12,10 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemGroups;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.Items;
+import net.minecraft.registry.RegistryKey;
 import net.minecraft.registry.RegistryKeys;
 import net.minecraft.server.network.ServerPlayerEntity;
+import net.minecraft.util.Identifier;
 import net.minecraft.world.World;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -31,7 +34,7 @@ public final class MobBiscuits {
     private static final DeferredRegister<Item> ITEMS = DeferredRegister.create(MOD_ID, RegistryKeys.ITEM);
 
     private static RegistrySupplier<Item> registerBiscuit(String name, FoodComponent foodComponent, BiscuitUseFunction biscuitUseFunction) {
-        return ITEMS.register(name, () -> new BiscuitItem(new Item.Settings().food(foodComponent).arch$tab(ItemGroups.FOOD_AND_DRINK), biscuitUseFunction));
+        return ITEMS.register(name, () -> new BiscuitItem(new Item.Settings().food(foodComponent).arch$tab(ItemGroups.FOOD_AND_DRINK).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, name))), biscuitUseFunction));
     }
 
     public static final RegistrySupplier<Item> COW_BISCUIT = registerBiscuit("cow_biscuit",
@@ -120,9 +123,10 @@ public final class MobBiscuits {
     );
 
     public static final RegistrySupplier<Item> BISCUIT_PRESS = ITEMS.register("biscuit_press",
-            () -> new BiscuitPressItem(new Item.Settings().arch$tab(ItemGroups.TOOLS)));
+            () -> new BiscuitPressItem(new Item.Settings().arch$tab(ItemGroups.TOOLS).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "biscuit_press")))));
 
     public static void init() {
         ITEMS.register();
+        ModComponents.initialize();
     }
 }

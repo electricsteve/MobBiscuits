@@ -1,11 +1,13 @@
 {
-  "advancements.mobbiscuits.root.title": "Mob Biscuits",
-  "item.mobbiscuits.cow_biscuit": "Cow Biscuit",
-  "item.mobbiscuits.creaking_biscuit": "Creaking Biscuit",
-  "item.mobbiscuits.creeper_biscuit": "Creeper Biscuit",
-  "item.mobbiscuits.pig_biscuit": "Pig Biscuit",
-  "item.mobbiscuits.sheep_biscuit": "Sheep Biscuit",
-  "item.mobbiscuits.skeleton_biscuit": "Skeleton Biscuit",
-  "item.mobbiscuits.slime_biscuit": "Slime Biscuit",
-  "item.mobbiscuits.zombie_biscuit": "Zombie Biscuit"
+  "advancements.mobbiscuits.root.title": "Mob Cookies",
+  "item.mobbiscuits.cow_biscuit": "Cow Cookie",
+  "item.mobbiscuits.creaking_biscuit": "Creaking Cookie",
+  "item.mobbiscuits.creeper_biscuit": "Creeper Cookie",
+  "item.mobbiscuits.pig_biscuit": "Pig Cookie",
+  "item.mobbiscuits.sheep_biscuit": "Sheep Cookie",
+  "item.mobbiscuits.skeleton_biscuit": "Skeleton Cookie",
+  "item.mobbiscuits.slime_biscuit": "Slime Cookie",
+  "item.mobbiscuits.zombie_biscuit": "Zombie Cookie",
+  "item.mobbiscuits.biscuit_press.tooltip": "Press pattern: %1$s",
+  "item.mobbiscuits.biscuit_press": "Cookie Press"
 }

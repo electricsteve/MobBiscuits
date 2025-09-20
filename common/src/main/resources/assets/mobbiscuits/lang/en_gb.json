@@ -1,0 +1,13 @@
+{
+  "advancements.mobbiscuits.root.title": "Mob Biscuits",
+  "item.mobbiscuits.cow_biscuit": "Cow Biscuit",
+  "item.mobbiscuits.creaking_biscuit": "Creaking Biscuit",
+  "item.mobbiscuits.creeper_biscuit": "Creeper Biscuit",
+  "item.mobbiscuits.pig_biscuit": "Pig Biscuit",
+  "item.mobbiscuits.sheep_biscuit": "Sheep Biscuit",
+  "item.mobbiscuits.skeleton_biscuit": "Skeleton Biscuit",
+  "item.mobbiscuits.slime_biscuit": "Slime Biscuit",
+  "item.mobbiscuits.zombie_biscuit": "Zombie Biscuit",
+  "item.mobbiscuits.biscuit_press.tooltip": "Press pattern: %1$s",
+  "item.mobbiscuits.biscuit_press": "Biscuit Press"
+}

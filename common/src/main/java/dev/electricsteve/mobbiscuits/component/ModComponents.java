@@ -15,7 +15,8 @@ public class ModComponents {
             () -> ComponentType.<Identifier>builder().codec(Identifier.CODEC).build()
     );
 
-    protected static void initialize() {
+    public static void initialize() {
+        COMPONENT_TYPES.register();
         MobBiscuits.LOGGER.info("Initializing MobBiscuits components");
     }
 }
