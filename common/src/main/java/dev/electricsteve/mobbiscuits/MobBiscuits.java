@@ -3,6 +3,7 @@ package dev.electricsteve.mobbiscuits;
 import dev.architectury.registry.registries.DeferredRegister;
 import dev.architectury.registry.registries.RegistrySupplier;
 import dev.electricsteve.mobbiscuits.component.ModComponents;
+import dev.electricsteve.mobbiscuits.recipe.ModRecipeTypes;
 import net.minecraft.component.type.FoodComponent;
 import net.minecraft.entity.EntityType;
 import net.minecraft.entity.LivingEntity;
@@ -128,5 +129,6 @@ public final class MobBiscuits {
     public static void init() {
         ITEMS.register();
         ModComponents.initialize();
+        ModRecipeTypes.initialize();
     }
 }

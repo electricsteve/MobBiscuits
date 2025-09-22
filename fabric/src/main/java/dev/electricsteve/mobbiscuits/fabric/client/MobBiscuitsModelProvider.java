@@ -19,9 +19,7 @@ public class MobBiscuitsModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        MobBiscuits.ITEMS.forEach(itemRegistrySupplier -> {
-            itemModelGenerator.register(itemRegistrySupplier.get(), Models.GENERATED);
-        });
+        MobBiscuits.ITEMS.forEach(itemRegistrySupplier -> itemModelGenerator.register(itemRegistrySupplier.get(), Models.GENERATED));
     }
 
     @Override
