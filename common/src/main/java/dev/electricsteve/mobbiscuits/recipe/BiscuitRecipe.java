@@ -34,8 +34,6 @@ public class BiscuitRecipe extends SpecialCraftingRecipe {
 
     @Override
     public boolean matches(CraftingRecipeInput input, World world) {
-        String string = "size: " + input.size() + ", width: " + input.getWidth() + ", height: " + input.getHeight() + ", stacks: [" + input.getStacks() + "]";
-        MobBiscuits.LOGGER.info("matches called, input: {}", string);
         if (input.size() != INGREDIENT_LIST.size()) {
             return false;
         }
@@ -54,13 +52,10 @@ public class BiscuitRecipe extends SpecialCraftingRecipe {
 
     @Override
     public ItemStack craft(CraftingRecipeInput input, RegistryWrapper.WrapperLookup registries) {
-        String string = "size: " + input.size() + ", width: " + input.getWidth() + ", height: " + input.getHeight() + ", stacks: [" + input.getStacks() + "]";
-        MobBiscuits.LOGGER.info("craft called, input: {}", string);
         if (input.size() != INGREDIENT_LIST.size()) {
-            MobBiscuits.LOGGER.info("craft failed, input size does not match ingredient list size");
             return ItemStack.EMPTY;
         }
-        ItemStack outputStack = new ItemStack(Items.AIR);
+        ItemStack outputStack = ItemStack.EMPTY;
         for (int i = 0; i < input.size(); i++) {
             ItemStack stackInSlot = input.getStackInSlot(i);
             Item requiredItem = INGREDIENT_LIST.get(i);
@@ -68,17 +63,16 @@ public class BiscuitRecipe extends SpecialCraftingRecipe {
                 continue; // Both are empty, continue to next slot
             }
             if (stackInSlot.getItem() != requiredItem) {
-                MobBiscuits.LOGGER.info("craft failed, item mismatch at slot {}: expected {}, found {}", i, requiredItem, stackInSlot.getItem());
                 return ItemStack.EMPTY; // Mismatch found
             }
             if (stackInSlot.isOf(MobBiscuits.BISCUIT_PRESS.get())) {
-                MobBiscuits.LOGGER.info("crafting with biscuit press, checking for mob data");
                 Identifier identifier = stackInSlot.get(ModComponents.MOB_COMPONENT_TYPE.get());
                 Optional<EntityType<?>> entityType = Registries.ENTITY_TYPE.getOptionalValue(identifier);
-                MobBiscuits.LOGGER.info("identifier: {}, entityType: {}", identifier, entityType);
                 if (identifier != null && entityType.isPresent() && MobBiscuits.BISCUIT_ITEMS.containsKey(entityType.get())) {
-                    MobBiscuits.LOGGER.info("mob data found: {}, crafting biscuit for {}", identifier, entityType.get().arch$registryName());
                     outputStack = new ItemStack(MobBiscuits.BISCUIT_ITEMS.get(entityType.get()).get());
+                } else  {
+                    outputStack = new ItemStack(Items.COOKIE);
+                    outputStack.setCount(8);
                 }
             }
         }

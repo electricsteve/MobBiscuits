@@ -36,3 +36,6 @@ side = "BOTH"
 
 [[mixins]]
 config = "mobbiscuits.mixins.json"
+
+[[mixins]]
+config = "mobbiscuits.neoforge.mixins.json"

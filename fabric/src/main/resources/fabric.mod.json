@@ -25,7 +25,8 @@
     ]
   },
   "mixins": [
-    "mobbiscuits.mixins.json"
+    "mobbiscuits.mixins.json",
+    "mobbiscuits.fabric.mixins.json"
   ],
   "depends": {
     "fabricloader": ">=0.16.14",
