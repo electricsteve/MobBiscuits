@@ -1,0 +1,33 @@
+{
+  "credit": "Made with Blockbench, modified by ElectricSteve",
+  "parent": "minecraft:item/handheld",
+  "textures": {
+    "layer0": "mobbiscuits:item/biscuit_press"
+  },
+  "display": {
+    "firstperson_righthand": {
+      "rotation": [
+        0,
+        -95,
+        -47
+      ],
+      "translation": [
+        0,
+        2.5,
+        0
+      ]
+    },
+    "firstperson_lefthand": {
+      "rotation": [
+        0,
+        95,
+        47
+      ],
+      "translation": [
+        0,
+        2.5,
+        0
+      ]
+    }
+  }
+}

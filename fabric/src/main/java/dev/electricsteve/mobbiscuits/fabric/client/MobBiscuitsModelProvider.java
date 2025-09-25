@@ -6,8 +6,12 @@ import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.minecraft.client.data.BlockStateModelGenerator;
 import net.minecraft.client.data.ItemModelGenerator;
 import net.minecraft.client.data.Models;
+import net.minecraft.util.Identifier;
+
+import java.util.List;
 
 public class MobBiscuitsModelProvider extends FabricModelProvider {
+
     public MobBiscuitsModelProvider(FabricDataOutput output) {
         super(output);
     }
@@ -19,7 +23,11 @@ public class MobBiscuitsModelProvider extends FabricModelProvider {
 
     @Override
     public void generateItemModels(ItemModelGenerator itemModelGenerator) {
-        MobBiscuits.ITEMS.forEach(itemRegistrySupplier -> itemModelGenerator.register(itemRegistrySupplier.get(), Models.GENERATED));
+        MobBiscuits.ITEMS.forEach(itemRegistrySupplier -> {
+            if (!itemRegistrySupplier.equals(MobBiscuits.BISCUIT_PRESS)) {
+                itemModelGenerator.register(itemRegistrySupplier.get(), Models.GENERATED);
+            }
+        });
     }
 
     @Override

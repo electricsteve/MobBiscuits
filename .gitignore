@@ -116,3 +116,4 @@ runs/
 !gradle-wrapper.jar
 
 .idea
+pixi

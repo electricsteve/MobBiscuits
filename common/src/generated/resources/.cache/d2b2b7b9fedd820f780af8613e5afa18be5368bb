@@ -1,5 +1,4 @@
 // 1.21.8	-999999999-01-01T00:00:00	Mob Biscuits/Mob Biscuits Model Provider
-4fe67ed1f34c3ade1277c52e0cb2cc2454cb4766 assets/mobbiscuits/items/biscuit_press.json
 3dfb5667904b3c1d535d095ccea99fdfbda79973 assets/mobbiscuits/items/cow_biscuit.json
 5ae5f5a8b6b217a2e2f73a793e678b849dff9f26 assets/mobbiscuits/items/creaking_biscuit.json
 ff349bab541ba507b035fdd1bc770678d54d0f84 assets/mobbiscuits/items/creeper_biscuit.json
@@ -8,7 +7,6 @@ ff349bab541ba507b035fdd1bc770678d54d0f84 assets/mobbiscuits/items/creeper_biscui
 99f9794ea533c118c6f77749a65fc84cbd86e5f8 assets/mobbiscuits/items/skeleton_biscuit.json
 1e1735cd0bcca0a86e130ecce4830aa76d3dc0d1 assets/mobbiscuits/items/slime_biscuit.json
 ed0522b4ce3dc7986e8f4af53f7d4cfb0eb3103e assets/mobbiscuits/items/zombie_biscuit.json
-d2eee15929747dcd4651fc62189cfa68eecc70b3 assets/mobbiscuits/models/item/biscuit_press.json
 905e1dcfc199106a775490f1821e7f4b192bad4a assets/mobbiscuits/models/item/cow_biscuit.json
 be42152ac91f7b0cc833a7bc5c5a030e9fbedaf4 assets/mobbiscuits/models/item/creaking_biscuit.json
 79fd5cbf1211cd1a0fc1fc977eb8703f97719342 assets/mobbiscuits/models/item/creeper_biscuit.json

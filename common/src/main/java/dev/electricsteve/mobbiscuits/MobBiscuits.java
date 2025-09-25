@@ -124,7 +124,7 @@ public final class MobBiscuits {
     );
 
     public static final RegistrySupplier<Item> BISCUIT_PRESS = ITEMS.register("biscuit_press",
-            () -> new BiscuitPressItem(new Item.Settings().arch$tab(ItemGroups.TOOLS).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "biscuit_press")))));
+            () -> new BiscuitPressItem(new Item.Settings().maxCount(1).arch$tab(ItemGroups.TOOLS).registryKey(RegistryKey.of(RegistryKeys.ITEM, Identifier.of(MOD_ID, "biscuit_press")))));
 
     public static void init() {
         ITEMS.register();
