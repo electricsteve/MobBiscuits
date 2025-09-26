@@ -8,5 +8,6 @@ public class MobBiscuitsDataGen implements DataGeneratorEntrypoint {
     public void onInitializeDataGenerator(FabricDataGenerator fabricDataGenerator) {
         FabricDataGenerator.Pack pack = fabricDataGenerator.createPack();
         pack.addProvider(MobBiscuitsModelProvider::new);
+        pack.addProvider(MobBiscuitsRecipeProvider::new);
     }
 }

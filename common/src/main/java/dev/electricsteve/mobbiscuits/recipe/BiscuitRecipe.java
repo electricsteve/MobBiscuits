@@ -70,6 +70,7 @@ public class BiscuitRecipe extends SpecialCraftingRecipe {
                 Optional<EntityType<?>> entityType = Registries.ENTITY_TYPE.getOptionalValue(identifier);
                 if (identifier != null && entityType.isPresent() && MobBiscuits.BISCUIT_ITEMS.containsKey(entityType.get())) {
                     outputStack = new ItemStack(MobBiscuits.BISCUIT_ITEMS.get(entityType.get()).get());
+                    outputStack.setCount(8);
                 } else  {
                     outputStack = new ItemStack(Items.COOKIE);
                     outputStack.setCount(8);

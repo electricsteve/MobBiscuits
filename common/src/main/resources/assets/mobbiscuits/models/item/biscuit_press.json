@@ -1,33 +1,26 @@
 {
-  "credit": "Made with Blockbench, modified by ElectricSteve",
-  "parent": "minecraft:item/handheld",
-  "textures": {
-    "layer0": "mobbiscuits:item/biscuit_press"
-  },
-  "display": {
-    "firstperson_righthand": {
-      "rotation": [
-        0,
-        -95,
-        -47
-      ],
-      "translation": [
-        0,
-        2.5,
-        0
-      ]
-    },
-    "firstperson_lefthand": {
-      "rotation": [
-        0,
-        95,
-        47
-      ],
-      "translation": [
-        0,
-        2.5,
-        0
-      ]
-    }
-  }
+	"format_version": "1.21.6",
+	"credit": "Made with Blockbench, modified by ElectricSteve",
+	"parent": "minecraft:item/generated",
+	"textures": {
+		"layer0": "mobbiscuits:item/biscuit_press"
+	},
+	"display": {
+		"thirdperson_righthand": {
+			"rotation": [90, -95, -47],
+			"translation": [0, 2.5, 0]
+		},
+		"thirdperson_lefthand": {
+			"rotation": [88, 95, 57],
+			"translation": [0, 2.5, 0]
+		},
+		"firstperson_righthand": {
+			"rotation": [0, -95, -47],
+			"translation": [0, 2.5, 0]
+		},
+		"firstperson_lefthand": {
+			"rotation": [0, 95, 47],
+			"translation": [0, 2.5, 0]
+		}
+	}
 }

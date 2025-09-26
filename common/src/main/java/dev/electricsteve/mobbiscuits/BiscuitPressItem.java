@@ -13,7 +13,9 @@ public class BiscuitPressItem extends Item {
 
     @Override
     public void postHit(ItemStack stack, LivingEntity target, LivingEntity attacker) {
-        if (MobBiscuits.BISCUIT_ITEMS.containsKey(target.getType()) && attacker instanceof ServerPlayerEntity) {
+        if (MobBiscuits.BISCUIT_ITEMS.containsKey(target.getType()) &&
+                attacker instanceof ServerPlayerEntity &&
+                stack.get(ModComponents.MOB_COMPONENT_TYPE.get()) == null) {
             stack.set(ModComponents.MOB_COMPONENT_TYPE.get(), target.getType().arch$registryName());
         }
         super.postHit(stack, target, attacker);

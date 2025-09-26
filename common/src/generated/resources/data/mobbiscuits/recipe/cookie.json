@@ -1,0 +1,18 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "mobbiscuits",
+  "key": {
+    "B": "mobbiscuits:biscuit_press",
+    "C": "minecraft:cocoa_beans",
+    "W": "minecraft:wheat"
+  },
+  "pattern": [
+    "WCW",
+    " B "
+  ],
+  "result": {
+    "count": 8,
+    "id": "minecraft:cookie"
+  }
+}
