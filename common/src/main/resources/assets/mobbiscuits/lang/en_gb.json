@@ -9,5 +9,6 @@
   "item.mobbiscuits.slime_biscuit": "Slime Biscuit",
   "item.mobbiscuits.zombie_biscuit": "Zombie Biscuit",
   "item.mobbiscuits.biscuit_press.tooltip": "Press pattern: %1$s",
-  "item.mobbiscuits.biscuit_press": "Biscuit Press"
+  "item.mobbiscuits.biscuit_press": "Biscuit Press",
+  "modmenu.nameTranslation.mobbiscuits": "Mob Biscuits"
 }

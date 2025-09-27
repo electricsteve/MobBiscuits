@@ -3,12 +3,23 @@
   "id": "mobbiscuits",
   "version": "${version}",
   "name": "Mob Biscuits",
-  "description": "",
+  "description": "A mod that adds biscuits (cookies if you prefer) with mob faces.",
   "authors": [
-    ""
+    {
+      "name": "ElectricSteve",
+      "contact": {
+        "email": "electric@electricsteve.dev",
+        "homepage": "https://modrinth.com/user/ElectricSteve",
+        "issues": "github.com/electricsteve/mobbiscuits/issues/",
+        "sources": "github.com/electricsteve/mobbiscuits/"
+      }
+    }
   ],
   "contact": {
-    "homepage": ""
+    "email": "electric@electricsteve.dev",
+    "homepage": "https://modrinth.com/mod/mobbiscuits",
+    "issues": "github.com/electricsteve/mobbiscuits/issues/",
+    "sources": "github.com/electricsteve/mobbiscuits/"
   },
   "license": "MIT",
   "icon": "assets/mobbiscuits/icon.png",
@@ -29,13 +40,17 @@
     "mobbiscuits.fabric.mixins.json"
   ],
   "depends": {
-    "fabricloader": ">=0.16.14",
-    "minecraft": "~1.21.1",
+    "fabricloader": ">=0.17.2",
+    "minecraft": "1.21.8",
     "java": ">=21",
-    "architectury": ">=13.0.8",
+    "architectury": ">=17.0.8",
     "fabric-api": "*"
   },
-  "suggests": {
-    "another-mod": "*"
+  "custom": {
+    "modmenu": {
+      "links": {
+        "modmenu.modrinth": "https://modrinth.com/mod/mobbiscuits"
+      }
+    }
   }
 }

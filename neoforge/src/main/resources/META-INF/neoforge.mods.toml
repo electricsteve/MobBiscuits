@@ -7,11 +7,14 @@ license = "MIT"
 modId = "mobbiscuits"
 version = "${version}"
 displayName = "Mob Biscuits"
-authors = ""
+authors = "ElectricSteve"
 description = '''
-
+A mod that adds biscuits (cookies if you prefer) with mob faces.
 '''
-#logoFile = ""
+logoFile = "assets/mobbiscuits/icon.png"
+updateJSONURL = "https://api.modrinth.com/updates/mobbiscuits/forge_updates.json"
+modUrl = "https://modrinth.com/mod/mobbiscuits"
+displayURL = "https://modrinth.com/mod/mobbiscuits"
 
 [[dependencies.mobbiscuits]]
 modId = "neoforge"
@@ -23,14 +26,14 @@ side = "BOTH"
 [[dependencies.mobbiscuits]]
 modId = "minecraft"
 type = "required"
-versionRange = "[1.21.1,)"
+versionRange = "[1.21.8,)"
 ordering = "NONE"
 side = "BOTH"
 
 [[dependencies.mobbiscuits]]
 modId = "architectury"
 type = "required"
-versionRange = "[13.0.8,)"
+versionRange = "[17.0.8,)"
 ordering = "AFTER"
 side = "BOTH"
 
